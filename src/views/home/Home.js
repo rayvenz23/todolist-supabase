@@ -32,7 +32,7 @@ const Login = () => {
 
   useEffect(() => {
     if (!authUser) {
-      //navigate('login');
+      navigate('login');
     }
   }, [authUser]);
 
