@@ -1,0 +1,25 @@
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+$primary: #ffae52;
+$bg1: #9d73c4;
+$bg2: #f0b4bd;
+
+
+// Global default
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: $white;
+  background-image: linear-gradient(to top left, $bg1, $bg2);
+  min-height: 100vh;
+}
+
+// Customize bootstrap
+.btn.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}

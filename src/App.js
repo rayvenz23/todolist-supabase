@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
+
+const Login = React.lazy(() => import('./views/startscreens/Login'));
+const Register = React.lazy(() => import('./views/startscreens/Register'));
+const Home = React.lazy(() => import('./views/home/Home'));
+
+const loading = (
+  <div>
+    Loading...
+  </div>
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Suspense fallback={loading}>
+      <Routes>
+        <Route path="/" name="Home" element={<Home />} />
+        <Route path="/login" name="Login" element={<Login />} />
+        <Route path="/register" name="Register" element={<Register />} />
+      </Routes>
+    </React.Suspense>
   );
 }
 
